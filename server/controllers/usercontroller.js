@@ -20,7 +20,7 @@ router.post('/create', function(req, res) {
     })
     .then(
         function createSuccess(user){
-            let token = jwt.sign({id: user.id}, process.env.JWT_SECRET, {expiresIn: 60 * 60* 24});
+            let token = jwt.sign({id: user.id}, process.env.JWT_SECRET, {expiresIn: 60 * 60 * 24});
         res.json({
             user: user,
             message: "User successfully created!",
@@ -54,7 +54,7 @@ router.post('/login', function(req, res) {
                     sessionToken: token
             })
             } else {
-                res.status(502).send({error: "Login Failed"})
+                res.status(502).json({error: "Login Failed"})
             } 
             }); 
         } else {
