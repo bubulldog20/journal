@@ -1,9 +1,10 @@
-require("dotenv").config();
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const sequelize = require("./db");
 const journal = require("./controllers/journalcontroller");
 let user = require("./controllers/usercontroller");
+const { response } = require('express');
 // app.use('/test', function(req, res){
 //     res.send("This is a message from the test endpoint on the server!");
 // })
@@ -16,6 +17,8 @@ let user = require("./controllers/usercontroller");
 //send a response from that endpoint (This is a practice route)
 
 sequelize.sync();
+
+app.use(require('./middleware/headers'));
 
 app.use(express.json());
 //EXPOSED ROUTE
