@@ -1,3 +1,5 @@
+const { head } = require("../server/controllers/usercontroller");
+
 /* *************************
 *** USER SIGNUP ***
 ************************** */
@@ -73,7 +75,23 @@ function userLogout() {
 *** TOKEN CHECKER FUNCTION ***
 ************************** */
 function tokenChecker() {
-    console.log('tokenChecker Function Called')
+    
+    let display = document.getElementById('journals')
+    let header = document.createElement('h5')
+    let accessToken = localStorage.getItem('SessionToken')
+    let text = 'Login or signup to get started!'
+
+    for (i = 0; i = display.childNodes.length; i++) {
+        display.removeChild(display.firstChild)
     }
-    tokenChecker()
+    
+    if (accessToken === 'undefined') {
+        display.appendChild(header);
+        header.textContent = text
+        header.setAttribute('id', 'defaultLogin');
+    } else {
+        null
+    }
+}
+tokenChecker()
     
