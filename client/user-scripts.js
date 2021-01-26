@@ -1,5 +1,3 @@
-const { head } = require("../server/controllers/usercontroller");
-
 /* *************************
 *** USER SIGNUP ***
 ************************** */
