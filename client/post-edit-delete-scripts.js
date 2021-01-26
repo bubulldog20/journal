@@ -51,7 +51,7 @@ function editJournal(postId) {
                 'Content-Type': 'application/json',
                 'Authorization': accessToken
             },
-            body: JSON.stringify(updateEntry)
+            body: JSON.stringify(updatedEntry)
         })
             .then(response => {
                 return response.json();
